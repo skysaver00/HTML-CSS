@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial;
 }
@@ -24,6 +28,8 @@ p {
 
 .main-text {
     -webkit-transform: rotate(-7deg);
+    margin: 0;
+    padding: 0;
 }
 
 #second-text {
@@ -31,7 +37,7 @@ p {
 }
 
 .spiral {
-    animation: rotate_image 0.5s linear infinite;
+    animation: rotate_image 1s linear infinite;
     transform-origin: 50% 50%;
     max-width: 50%;
     height: auto;
