@@ -21,6 +21,18 @@ p {
     text-align: justify;
 }
 
+.container {
+    width: 1140px;
+    margin-left:auto;
+    margin-right: auto;
+    background-color:pink;
+}
+
+.blog-post {
+    background-color:yellowgreen;
+    width:75%;
+}
+
 .opening {
     color: red;
     font-size: 21px;
@@ -28,12 +40,13 @@ p {
 
 .main-text {
     -webkit-transform: rotate(-7deg);
-    margin: 0;
-    padding: 0;
 }
 
 #second-text {
     -webkit-transform: rotate(-180deg);
+    width:25%;
+    background-color: cornsilk;
+    float: right;
 }
 
 .spiral {
@@ -41,6 +54,7 @@ p {
     transform-origin: 50% 50%;
     max-width: 50%;
     height: auto;
+    background-color: orange;
 }
 @keyframes rotate_image {
     100% {
