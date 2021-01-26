@@ -1,6 +1,6 @@
 const colors = ["green", "red", "yellow", "blue", "black"];
 
-const btn = doucment.getElementById("btn");
+const btn = document.getElementById("btn");
 const color = document.querySelector(".color");
 
 btn.addEventListener("click", function() {
@@ -14,5 +14,5 @@ btn.addEventListener("click", function() {
 });
 
 function getRandomNumber() {
-    return Math.random();
+    return Math.floor(Math.random() * colors.length);
 }
