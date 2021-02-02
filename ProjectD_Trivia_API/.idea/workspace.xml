@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3b90920-6d50-483b-bc98-d6653fba0a92" name="Default Changelist" comment="" />
+    <list default="true" id="0ab4ded8-9abb-49bc-a43b-f8135ab06fca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../ProjectC_Counter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ProjectC_Counter/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +12,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1ndtq3lapjh6o6WQp5hrD0fphzf" />
+  <component name="ProjectId" id="1nvTjPB9TlELf9Qq4HStdzh8dTT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -25,13 +27,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e3b90920-6d50-483b-bc98-d6653fba0a92" name="Default Changelist" comment="" />
-      <created>1611731984716</created>
+      <changelist id="0ab4ded8-9abb-49bc-a43b-f8135ab06fca" name="Default Changelist" comment="" />
+      <created>1612269700214</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1611731984716</updated>
-      <workItem from="1611731986329" duration="6000" />
-      <workItem from="1612193699893" duration="11000" />
+      <updated>1612269700214</updated>
+      <workItem from="1612269701630" duration="2000" />
     </task>
     <servers />
   </component>
@@ -48,6 +49,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
