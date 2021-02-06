@@ -1,7 +1,7 @@
 window.onload = sendApiRequest;
 
 async function sendApiRequest() {
-    let response = await fetch(`https://opentdb.com/api.php?amount=1&type=multiple`);
+    let response = await fetch(`https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple`);
     console.log(response);
     let data = await response.json();
     console.log(data);
@@ -44,12 +44,11 @@ function useApiData(data) {
 }
 
 function Yes() {
-    alert("정답입니다! 와 짝짝짝짝짝 X 5")
-    sendApiRequest();
+    alert("정답입니다!")
+    location.reload();
 }
 
 function No() {
-    this.style.backgroundColor = "red";
-    alert("틀렸습니다");
-    sendApiRequest();
+    alert("틀렸습니다.");
+    location.reload();
 }
