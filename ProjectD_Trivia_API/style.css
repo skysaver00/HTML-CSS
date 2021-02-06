@@ -1,0 +1,21 @@
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.dogo {
+  background-color: lightblue; /* Green */
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}

@@ -10,6 +10,7 @@ async function sendApiRequest() {
 
 var rand;
 let correctButton;
+let wrongButton;
 
 function useApiData(data) {
     document.querySelector("#category").innerHTML = `Category: ${data.results[0].category}`
@@ -30,13 +31,25 @@ function useApiData(data) {
     }
     document.querySelector(correct).innerHTML = data.results[0].correct_answer;
     
-    correctButton = document.querySelector(correct);
+    correctButton = document.getElementsByClassName("dogo");
+
+    for(var i = 0; i < 4; i++) {
+        if(i + 1 === rand) {
+            correctButton[i].addEventListener("click", Yes);
+        }
+        else {
+            correctButton[i].addEventListener("click", No);
+        }
+    }
 }
 
-console.log("sdsdd" + correct);
-correctButton = document.querySelector(correct);
-
-correctButton.addEventListener("click", () => {
+function Yes() {
     alert("정답입니다! 와 짝짝짝짝짝 X 5")
-    sendApiRequest()
-})
+    sendApiRequest();
+}
+
+function No() {
+    this.style.backgroundColor = "red";
+    alert("틀렸습니다");
+    sendApiRequest();
+}
