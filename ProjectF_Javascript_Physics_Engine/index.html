@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel = "stylesheet" type = "text/css" href = "styles.css" />
+    <title>물리 엔진</title>
+</head>
+<body>
+    <script src = "matter.js"></script>
+    <script>
+        let engine = Matter.Engine.create();
+
+        let render = Matter.Render.create({
+            element: document.body,
+            engine: engine
+        });
+
+        let ground = Matter.Bodies.rectangle(400, 600, 810, 60, {isStatic: true})
+        
+    </script>
+</body>
+</html>
