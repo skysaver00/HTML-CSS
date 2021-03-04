@@ -52,3 +52,41 @@ console.log(continent)
 console.log(language)
 
 ////Basic Operators
+const ageKim = 2021-1996
+const ageMom = 2021-1965
+console.log(ageKim, ageMom)
+console.log(ageKim * 2, ageMom / 2, 2 ** 3)
+
+const firstName2 = 'Young Woo'
+const lastName2 = 'Kim'
+console.log(firstName2 + " " + lastName2)
+
+let x = 10 + 5
+console.log(x + 100)
+x += 10
+console.log(x)
+x *= 4
+console.log(x)
+x--
+console.log(x)
+x++
+console.log(x)
+x -= 10
+console.log(x)
+x /= 3
+console.log(x)
+
+console.log(ageKim > ageMom)
+console.log(ageKim <= 30)
+
+const t = true
+console.log(!t)
+
+console.log(population / 2)
+population = population + 1
+console.log(population)
+console.log(population > 6000000)
+console.log(population < 33000000)
+
+let description = country + " is in " + continent + ", and its " + population + " people speak " + language
+console.log(description)
