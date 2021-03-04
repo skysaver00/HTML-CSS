@@ -148,3 +148,11 @@ if(isOldEnough) {
 } else {
     console.log(`Sarah is too young. Wait another ${18 - age2}`)
 }
+
+if(population > 33000000) {
+    console.log(`${country}'s population is above average`)
+} else {
+    console.log(`${country}'s population is below average`)
+}
+
+////Type Conversion and Coercion
