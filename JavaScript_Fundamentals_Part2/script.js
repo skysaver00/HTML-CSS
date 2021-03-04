@@ -155,4 +155,27 @@ if(population > 33000000) {
     console.log(`${country}'s population is below average`)
 }
 
+////Coding Challange 2
+let markMass = 78
+let markHeight = 1.69
+let johnMass = 92
+let johnHeight = 1.95
+let markHigherBMI = (markMass / (markHeight ** 2) > johnMass / (johnHeight ** 2))
+if(markHigherBMI) {
+    console.log("Mark's BMI is higher than John's!")
+} else {
+    console.log("John's BMI is higher than Mark's!")
+}
+
+markMass = 95
+markHeight = 1.88
+johnMass = 85
+johnHeight = 1.76
+markHigherBMI = (markMass / (markHeight ** 2) > johnMass / (johnHeight ** 2))
+if(markHigherBMI) {
+    console.log("Mark's BMI is higher than John's!")
+} else {
+    console.log("John's BMI is higher than Mark's!")
+}
+
 ////Type Conversion and Coercion
