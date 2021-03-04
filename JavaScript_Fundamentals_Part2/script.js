@@ -122,6 +122,29 @@ const firstName3 = "Young Woo"
 const job2 = "student"
 const birthyear = "1996"
 
-const youngwoo = "I'm " + firstName3 + ", a " + (2021 - birthyear) + "years old "
+const youngwoo = "I'm " + firstName3 + ", a " + (2021 - birthyear) + " years old "
 + job2 + "!"
 console.log(youngwoo)
+
+const youngwooNew = `I'm ${firstName3}, a ${2021-birthyear} years old ${job2}!`
+console.log(youngwooNew)
+console.log(`Just a regular String...`)
+//따라서 '', ""은 일반적인 String
+//``은 Template String이라고 한다.
+
+console.log('String with \n\
+multiple \n\
+lines')
+
+description = `${country} is in ${continent}, and its ${population} people speak ${language}`
+console.log(description)
+
+////Taking Decisions: if/else statements
+const age2 = 19
+const isOldEnough = age2 >= 18;
+
+if(isOldEnough) {
+    console.log('Sarah can start driving liscense 🚗')
+} else {
+    console.log(`Sarah is too young. Wait another ${18 - age2}`)
+}
