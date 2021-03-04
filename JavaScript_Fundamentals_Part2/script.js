@@ -40,3 +40,15 @@ console.log(birth)
 //ES5까지 Javascript에서 변수를 선언하는 방법. 지금은 비추천
 var job = 'programmer'
 console.log(job)
+
+lastName = "Kim"
+console.log(lastName)
+
+language = "Korean"
+//const country = "Republic of Korea"
+//const continent = "Asia"
+console.log(country)
+console.log(continent)
+console.log(language)
+
+////Basic Operators
