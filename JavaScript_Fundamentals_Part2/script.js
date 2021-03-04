@@ -90,3 +90,38 @@ console.log(population < 33000000)
 
 let description = country + " is in " + continent + ", and its " + population + " people speak " + language
 console.log(description)
+
+////Operator Precedence
+//왜 어떤 연산자가 먼저 실행되는가?
+//우선순위가 있기 때문이다. mdn operator precendence을 보면 확인해 볼 수 있다.
+//x - 1991 > x - 2018을 보면 -, >가 있다.
+//-는 12순위다. 그리고 왼쪽 먼저다. x보고 오른쪽 보고 -하게 된다.
+// 하지만 =, +=, -= 등은 오른쪽에서 왼쪽으로 간다.
+
+let a, b
+a = b = 25 - 10 - 5
+console.log(a, b)
+
+////Coding Challange
+let markMass = 78
+let markHeight = 1.69
+let johnMass = 92
+let johnHeight = 1.95
+let markHigherBMI = (markMass / (markHeight ** 2) > johnMass / (johnHeight ** 2))
+console.log(markMass / (markHeight ** 2), johnMass / (johnHeight ** 2), markHigherBMI)
+
+markMass = 95
+markHeight = 1.88
+johnMass = 85
+johnHeight = 1.76
+markHigherBMI = (markMass / (markHeight ** 2) > johnMass / (johnHeight ** 2))
+console.log(markMass / (markHeight ** 2), johnMass / (johnHeight ** 2), markHigherBMI)
+
+////Strings and Template Literals
+const firstName3 = "Young Woo"
+const job2 = "student"
+const birthyear = "1996"
+
+const youngwoo = "I'm " + firstName3 + ", a " + (2021 - birthyear) + "years old "
++ job2 + "!"
+console.log(youngwoo)
