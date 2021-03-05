@@ -513,3 +513,4 @@ console.log(`Tip is ${tip >= 50 && tip <= 300 ? tip * 0.15 : tip * 0.2}, and ove
 
 
 ////Javascript Releases: ES5, ES6+, ESNEXT
+//비디오 확인
