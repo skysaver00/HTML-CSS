@@ -223,4 +223,54 @@ console.log('9' - '5') // 4
 console.log('19' - '13' + '17') // 617
 console.log('19' - '13' + 17) // 23
 console.log('123' < 57) // false
-console.log(5 + 6 + '4' + 9 - 4 - 2) // 
+console.log(5 + 6 + '4' + 9 - 4 - 2) // 1143
+
+////Truthy and Falsy values
+//5 Falsy values: 0, '', undefined, null, NaN
+//나머지는 Truthy value이다.
+console.log(Boolean(0))
+console.log(Boolean(1))
+console.log(Boolean(''))
+console.log(Boolean(undefined))
+console.log(Boolean(NaN))
+console.log(Boolean())
+console.log(Boolean({}))
+
+const money = 0; //money 는 숫자지만,
+if(money) { //여기 if/else문에서 coercion이 일어나서 falsy 값이니까 거짓이된다.
+    console.log("Don't spend it all")
+} else { //그래서 else가 실행되는 것.
+    console.log("You should get a job!")
+}
+
+let height = '0' // 이건 True로 인식된다.
+if(height) {
+    console.log('Yay!!!')
+} else {
+    console.log('Height is UNDEFINED')
+}
+
+////Equality Operators == vs ===
+const age3 = 18;
+if(age3 === 18) {
+    console.log('You just became an adult :D')///=== =3개는 완벽히 같으면
+}
+
+//true는 ===에서 양쪽이 완벽히 같을때만 인식된다.
+console.log(18 === 18)
+console.log(18 === 19)
+console.log(18 === '18')//=3개일때는 확실히 구분해버린다. false가 나온다.
+console.log(18 == 18)
+console.log(18 == 19)//이건 뭘하든 틀렸다고 나온다.
+console.log(18 == '18')//== =2개는 type coercion을 고려하지 않는다.
+//따라서 이건 값이 같다고 나오게 된다.
+
+//==은 loose하게 비교하고, ===은 strict하3게 비교한다고 생각하면 된다.
+
+const favourite = prompt("Whats's your favourite number?")
+console.log(favourite)
+console.log(typeof(favourite))
+
+if(favourite == 23) {
+    console.log('Cool! 23 is an amazing number!')
+}
