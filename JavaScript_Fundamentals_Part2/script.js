@@ -378,3 +378,138 @@ if(Dolphins > Koalas && (Dolphins >= 100)) {
 } else if(Dolphins === Koalas && Dolphins >= 100 && Koalas >= 100) {
     console.log("No one wins the trophy")
 }
+
+////The Switch Statement
+const day = 'thursday'
+
+switch(day) {
+    case 'monday':
+        console.log("Its Monday...")
+        break;
+
+    case 'tuesday':
+        console.log("Its Tuesday...")
+        break;
+
+    case 'wednesday':
+        console.log("Its Wednesday...")
+        break;
+    
+    case 'thursday':
+        console.log("Its Thursday...")
+        break;
+
+    case 'friday':
+        console.log("Its Friday!")
+        break;
+
+    case 'saturday':
+        console.log("Its Saturday!")
+        break;
+    
+    case 'sunday':
+        console.log("Its Sunday!")
+        break;
+
+    default:
+        console.log("It not valid day")
+        break;
+}
+
+//break이 없으면 계속 밑으로 내려가서 실행이 된다.
+//따라서 thursday가 day면, 월, 화, 수 모두 지나가고, 목요일에서 case로 들어가고
+//이후 금, 토, 일 케이스를 계속 들어가게 된다. default까지...
+switch(day) {
+    case 'monday':
+        console.log("Its Monday...")
+
+    case 'tuesday':
+        console.log("Its Tuesday...")
+
+    case 'wednesday':
+    case 'thursday':
+        console.log("Its Wednesday...")
+        console.log("Its Thursday...")
+
+    case 'friday':
+        console.log("Its Friday!")
+
+    case 'saturday':
+        console.log("Its Saturday!")
+    
+    case 'sunday':
+        console.log("Its Sunday!")
+
+    default:
+        console.log("It not valid day")
+}
+
+switch(language) {
+    case 'Chinese':
+    case 'Mandarin':
+        console.log("MOST number of native speakers!")
+        break;
+
+    case 'Spanish':
+        console.log("2nd place in number of native speakers")
+        break;
+
+    case 'Engilish':
+        console.log("3rd place")
+        break;
+
+    case 'Hindi':
+        console.log('Number 4')
+        break;
+
+    case 'Arabic':
+        console.log("5th most spoken language")
+        break;
+
+    default:
+        console.log("Great language too 😁")
+        break;
+}
+
+////Statements and Expressions
+//별거 없다.
+
+////The conditional(ternary) operator
+let age4 = 23
+age4 >= 18 ? console.log('I like to drink wine 🍷') :
+console.log('I like to drink juice 🧃')
+
+age4 = 17
+age4 >= 18 ? console.log('I like to drink wine 🍷') :
+console.log('I like to drink juice 🧃')
+
+const drink = age4 >= 18 ? 'wine 🍷' : 'juice 🧃'
+console.log(drink)
+
+let drink2
+if(age4 >= 18) {
+    drink2 = 'wine 🍷'
+} else {
+    drink2 = 'juice 🧃'
+} console.log(drink2)
+
+let food = 'pizza'
+console.log(`I like to eat ${food === 'pizza' ? 'pizza 🍕': 'hamburger 🍔'}`)
+food = 'hamburger'
+console.log(`I like to eat ${food === 'pizza' ? 'pizza 🍕': 'hamburger 🍔'}`)
+
+population >= 33000000 ? console.log(`${country}'s population is above average 👨‍👩‍👧‍👦`):
+console.log(`${contury}'s population is below average 👨‍👧`)
+
+////Coding Challange 4
+let tip = 275
+console.log(`Tip is ${tip >= 50 && tip <= 300 ? tip * 0.15 : tip * 0.2}, and overall is ${tip >= 50 && tip <= 300 ? tip + tip * 0.15 : tip + tip * 0.2}`)
+
+tip = 40
+console.log(`Tip is ${tip >= 50 && tip <= 300 ? tip * 0.15 : tip * 0.2}, and overall is ${tip >= 50 && tip <= 300 ? tip + tip * 0.15 : tip + tip * 0.2}`)
+
+tip = 430
+console.log(`Tip is ${tip >= 50 && tip <= 300 ? tip * 0.15 : tip * 0.2}, and overall is ${tip >= 50 && tip <= 300 ? tip + tip * 0.15 : tip + tip * 0.2}`)
+
+
+////Javascript Releases: ES5, ES6+, ESNEXT
