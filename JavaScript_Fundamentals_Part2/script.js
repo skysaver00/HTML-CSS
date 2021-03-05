@@ -267,10 +267,23 @@ console.log(18 == '18')//== =2개는 type coercion을 고려하지 않는다.
 
 //==은 loose하게 비교하고, ===은 strict하3게 비교한다고 생각하면 된다.
 
-const favourite = prompt("Whats's your favourite number?")
+/*const favourite = prompt("Whats's your favourite number?")
 console.log(favourite)
 console.log(typeof(favourite))
 
 if(favourite == 23) {
     console.log('Cool! 23 is an amazing number!')
+} else if(favourite == 7) {
+    console.log('7 is also a cool number')
+} else {
+    console.log("You didn't answer cool number")
+}*/
+
+let numNeighbours = prompt('How many neighbour does your country have?')
+if(numNeighbours == 1) {
+    console.log("Only 1 border")
+} else if(numNeighbours > 1) {
+    console.log("More than 1 border")
+} else {
+    console.log('No border')
 }
