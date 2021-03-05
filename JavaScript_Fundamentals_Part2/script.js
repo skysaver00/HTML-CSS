@@ -279,11 +279,44 @@ if(favourite == 23) {
     console.log("You didn't answer cool number")
 }*/
 
-let numNeighbours = prompt('How many neighbour does your country have?')
+/*let numNeighbours = prompt('How many neighbour does your country have?')
 if(numNeighbours == 1) {
     console.log("Only 1 border")
 } else if(numNeighbours > 1) {
     console.log("More than 1 border")
 } else {
     console.log('No border')
-}
+}*/
+
+////Boolean Logic
+let A = true, B = true
+console.log("A && B", A && B)
+A = true, B = false
+console.log("A && B", A && B)
+A = false, B = false
+console.log("A && B", A && B)
+A = false, B = true
+console.log("A && B", A && B)
+
+A = true, B = true
+console.log("A || B", A || B)
+A = true, B = false
+console.log("A || B", A || B)
+A = false, B = false
+console.log("A || B", A || B)
+A = false, B = true
+console.log("A || B", A || B)
+
+A = true
+console.log("Not A == !A", !A)
+A = false
+console.log("Not A == !A", !A)
+
+A = true, B = true
+console.log("NOT A && B", !A && B)
+A = true, B = false
+console.log("NOT A && B", !A && B)
+A = false, B = false
+console.log("NOT A && B", !A && B)
+A = false, B = true
+console.log("NOT A && B", !A && B)
