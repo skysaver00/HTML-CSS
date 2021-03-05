@@ -156,11 +156,11 @@ if(population > 33000000) {
 }
 
 ////Coding Challange 2
-let markMass = 78
-let markHeight = 1.69
-let johnMass = 92
-let johnHeight = 1.95
-let markHigherBMI = (markMass / (markHeight ** 2) > johnMass / (johnHeight ** 2))
+markMass = 78
+markHeight = 1.69
+johnMass = 92
+johnHeight = 1.95
+markHigherBMI = (markMass / (markHeight ** 2) > johnMass / (johnHeight ** 2))
 if(markHigherBMI) {
     console.log("Mark's BMI is higher than John's!")
 } else {
@@ -179,3 +179,48 @@ if(markHigherBMI) {
 }
 
 ////Type Conversion and Coercion
+const inputYear = '1991'
+console.log(Number(inputYear) + 30, inputYear)
+console.log(inputYear + 30)
+
+const inputNumber = 2020
+console.log(String(inputNumber) + ` Hello World!`)
+
+//만약에 숫자로 바꿀 수 없는 값이 들어오면 NaN이 뜬다.
+console.log(Number('Young Woo Kim'))
+console.log(typeof NaN)
+//하지만 NaN의 타입은 숫자다. 이건 기억해두자.
+
+console.log(String(23), 23, '23')
+
+//Type coercion
+console.log('I am ' + 23 + ` year's old.`)
+//여기서 23은 coercion이 일어나서 Number에서 String으로 바뀌었다.
+
+if(('I am ' + 23 +  "year's old.") === ('I am ' + '23' +  "year's old.")) {
+    console.log("True")
+} else console.log("False")
+//따라서 같은걸 보면 23은 String으로 인식되는 걸로 알 수 있다.
+
+console.log(23 - '10' - 3)
+console.log('23' - '10' - 3)
+console.log(23 + '10' - 3)
+//-, *, /는 모두 string으로 정의된 숫자를 모두 Number로 바꾼다.
+//그에 반해, +는 Number를 String으로 바꿔버린다.
+console.log((('23' + '10') - '8') / '2' + '50')
+console.log((('23' + '10') - '8') / '2')
+//이미 나누기를 할때 Number로 바뀌게 되었다.
+//따라서 Number를 더해주면 Number + Number니까 제대로 더해진다.
+console.log((('23' + '10') - '8') / '2' +  50)
+let num = '1' + 1
+num = num - 1
+console.log(num)
+
+console.log(2 + 3 + 4 + 5 + '5')
+console.log('10' - '4' - '3' + 2 + '5')
+
+console.log('9' - '5') // 4
+console.log('19' - '13' + '17') // 617
+console.log('19' - '13' + 17) // 23
+console.log('123' < 57) // false
+console.log(5 + 6 + '4' + 9 - 4 - 2) // 
