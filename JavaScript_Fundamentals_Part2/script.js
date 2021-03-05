@@ -320,3 +320,61 @@ A = false, B = false
 console.log("NOT A && B", !A && B)
 A = false, B = true
 console.log("NOT A && B", !A && B)
+
+////Logical Operators
+const hasDriversLicense = true;
+const hasGoodVision = false;
+
+console.log(hasDriversLicense && hasGoodVision)
+console.log(hasDriversLicense || hasGoodVision)
+console.log(!hasDriversLicense)
+
+const shouldDrive = hasDriversLicense && hasGoodVision
+if(shouldDrive) console.log("Yes You can drive!")
+else console.log("No you can't drive")
+
+const isTired = true
+console.log(hasDriversLicense || hasGoodVision || isTired)
+
+const SarahLanguage = "English"
+const SarahPopulation = 50000000
+
+if(SarahLanguage === language && SarahPopulation > population) {
+    console.log(`You should live in ${country} :)`)
+} else {
+    console.log(`${country} does not meet your criteria :/`)
+}
+
+////Coding Challange 3
+let Dolphins = (96 + 108 + 89) / 3
+let Koalas = (88 + 91 + 110) / 3
+
+if(Dolphins > Koalas) {
+    console.log("Dolphins Win the trophy!")
+} else if(Dolphins < Koalas) {
+    console.log("Koalas Win the trophy!")
+} else {
+    console.log("They Draw in gymnastics.")
+}
+
+Dolphins = (97 + 112 + 101) / 3
+Koalas = (109 + 95 + 123) / 3
+
+if(Dolphins > Koalas && (Dolphins >= 100)) {
+    console.log("Dolphins Win the trophy!")
+} else if(Dolphins < Koalas && (Koalas >= 100)) {
+    console.log("Koalas Win the trophy!")
+} else {
+    console.log("Both Win the trophy!")
+}
+
+Dolphins = (97 + 112 + 101) / 3
+Koalas = (109 + 95 + 106) / 3
+
+if(Dolphins > Koalas && (Dolphins >= 100)) {
+    console.log("Dolphins Win the trophy!")
+} else if(Dolphins < Koalas && (Koalas >= 100)) {
+    console.log("Koalas Win the trophy!")
+} else if(Dolphins === Koalas && Dolphins >= 100 && Koalas >= 100) {
+    console.log("No one wins the trophy")
+}
