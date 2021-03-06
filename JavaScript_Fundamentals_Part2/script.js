@@ -49,6 +49,17 @@ logger(23) //아무 효과가 없다. 파라미터가 없는걸 억지로 줘도
 
 const num = Number('23')
 
+function describeCountry(country, population, capitalCity) {
+    return `${country} has ${population} people and its capital city is ${capitalCity}`
+}
+
+const descPortugal = describeCountry('Portugal', 10, 'Lisbon')
+const descGermany = describeCountry('Germany', 83, 'Berlin')
+const descFinland = describeCountry('Finland', 6, 'Helsinki')
+console.log(descPortugal)
+console.log(descGermany)
+console.log(descFinland)
+
 ////Function Declarations vs. Expressions
 function calcAge1(birthYear) {
     const age = 2021 - birthYear;
@@ -76,11 +87,27 @@ console.log(age1, age2)
 //따라서 Function은 type이 아니다. String, Number가 아니라 Value일 뿐이다.
 //이렇기 때문에 어떻게 하든 상관이 없다.
 
+function percentageOfWorld1(population) {
+    return (population / 7900000000) * 100
+}
+
+const percentageOfWorld2 = function(population) {
+    return ((population / 7900000000) * 100)
+}
+
+console.log(percentageOfWorld1(55000000))
+console.log(percentageOfWorld1(121000000))
+console.log(percentageOfWorld1(1441000000))
+
+console.log(percentageOfWorld2(304000000))
+console.log(percentageOfWorld2(83000000))
+console.log(percentageOfWorld2(1370000000))
+
 ////Arrow Functions
 //3번째 Function의 정의 방법이 있다. ES6때 새로 지정됨.
 //Declaration, Expression말고 Arrow Function이 있다는 것
 
-//밑고 같이 화살표같은게 들어간다.
+//밑과 같이 화살표같은게 들어간다.
 const calcAge4 = birthYear => 2021 - birthYear
 const age4 = calcAge4(1991);
 console.log(age4)
@@ -103,3 +130,42 @@ const yearsUntilRetirement2 = (birthYear, firstName) => {
 
 console.log(yearsUntilRetirement2(2001, 'Bob'))
 console.log(yearsUntilRetirement2(1999, 'Tohmas'))
+
+const percentageOfWorld3 = (population, country) => {
+    let pop = (population / 7900000000) * 100
+    return `${country}'s population ratio is ${pop}%`
+}
+
+console.log(percentageOfWorld3(83000000, 'Germany'))
+console.log(percentageOfWorld3(121000000, 'Japan'))
+console.log(percentageOfWorld3(1441000000, 'China'))
+
+////Functions Calling Other Functions
+function cutFruitPieces(fruit) {
+    return fruit * 4
+}
+
+function fruitProcessor2(apples, oranges) {
+    const applePieces = cutFruitPieces(apples)
+    const orangePieces = cutFruitPieces(oranges)
+
+    const juice = `Juice with ${applePieces} apples and ${orangePieces} oranges`
+
+    return juice
+}
+
+console.log(fruitProcessor2(2, 4))
+
+//여기서 2, 4가 function fruitProcessor에 들어간다 112번줄에 있는.
+//그럼 2 -> apples해서 cutFruitPieces에 들어가서 다시 위의 함수를 불러온다.
+//따라서 함수 내에서 또 함수를 불러올 수 있는 것이다!
+//이렇게 해서 2였던 숫자는 applePieces에 2 * 4 => 8이 저장된다.
+//몰론 옆에있는 4도 마찬가지다.
+
+const describePopulation = (country, population) => {
+    const pop = percentageOfWorld2(population)
+
+    return `${country} has ${population}, which is about ${pop}% of the world`
+}
+
+console.log(describePopulation('China', 1441000000))
