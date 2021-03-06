@@ -169,3 +169,21 @@ const describePopulation = (country, population) => {
 }
 
 console.log(describePopulation('China', 1441000000))
+
+////Reviewing Function
+const yearsUntilRetirement3 = function(birthYear, firstName) {
+    const age = calcAge1(birthYear);
+    const retirement = 65 - age;
+
+    if (retirement > 0) {
+        return retirement
+        console.log(`${firstName} retires in ${retirement} years`)
+    } else {
+        return -1
+        console.log(`${firstName} has already retired!`)
+    } //이미 다른 언어를 했으니까 잘 알텐데, return 뒤에는 닿을 수 없다.
+    //따라서 뒤에는 닿지 않고 return에서 해당 function을 탈출하게 된다.
+}
+
+console.log(yearsUntilRetirement3(1991, 'Jonas'))
+console.log(yearsUntilRetirement3(1955, 'Mike'))
