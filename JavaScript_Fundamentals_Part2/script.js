@@ -72,3 +72,6 @@ const calcAge3 = function (birthYear) {
 
 const age2 = calcAge3(2001)
 console.log(age1, age2)
+
+//따라서 Function은 type이 아니다. String, Number가 아니라 Value일 뿐이다.
+//이렇기 때문에 어떻게 하든 상관이 없다.
