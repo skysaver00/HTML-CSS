@@ -44,4 +44,31 @@ console.log(fruitProcessor(10, 20))
 let appleOrangeJuice = fruitProcessor(2, 4)
 console.log(appleOrangeJuice)
 
-logger(23)
+logger(23) //아무 효과가 없다. 파라미터가 없는걸 억지로 줘도 상관은 없지만,
+//뭐 그렇다고 달라지는건 아니다.
+
+const num = Number('23')
+
+////Function Declarations vs. Expressions
+function calcAge1(birthYear) {
+    const age = 2021 - birthYear;
+    return age;
+} //또는
+
+function calcAge2(birthYear) {
+    return 2021 - birthYear;
+}
+
+console.log(calcAge1(1996))
+console.log(calcAge2(1996))
+
+const age1 = calcAge1(1964)
+console.log(age1) //이게 Function Declaration
+
+//이게 Function Expression이다.
+const calcAge3 = function (birthYear) {
+    return 2100 - birthYear;
+}
+
+const age2 = calcAge3(2001)
+console.log(age1, age2)
