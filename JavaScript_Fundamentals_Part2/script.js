@@ -187,3 +187,22 @@ const yearsUntilRetirement3 = function(birthYear, firstName) {
 
 console.log(yearsUntilRetirement3(1991, 'Jonas'))
 console.log(yearsUntilRetirement3(1955, 'Mike'))
+
+//Function은 3개를 기억하자. Declaration, Expression, Arrow
+//Arrow function ES6에서 새로 나온 방법이다.
+
+////Coding Challange 1
+const calcAverage = (score1, score2, score3) => {
+    return (score1 + score2 + score3) /3
+}
+
+const checkWinner = function(avgDolphins, avgKoalas) {
+    if(avgDolphins > 2 * avgKoalas) {
+        return `Dolphins Win! (${avgDolphins} vs. ${avgKoalas})`
+    } else if(avgDolphins * 2 < avgKoalas) {
+        return `Koalas Win! (${avgDolphins} vs. ${avgKoalas})`
+    } else return `Dolphins and Koalas Drew.`
+}
+
+console.log(checkWinner(calcAverage(44, 23, 71), calcAverage(65, 54, 49)))
+console.log(checkWinner(calcAverage(85, 54, 41), calcAverage(23,34,27)))
