@@ -75,3 +75,31 @@ console.log(age1, age2)
 
 //따라서 Function은 type이 아니다. String, Number가 아니라 Value일 뿐이다.
 //이렇기 때문에 어떻게 하든 상관이 없다.
+
+////Arrow Functions
+//3번째 Function의 정의 방법이 있다. ES6때 새로 지정됨.
+//Declaration, Expression말고 Arrow Function이 있다는 것
+
+//밑고 같이 화살표같은게 들어간다.
+const calcAge4 = birthYear => 2021 - birthYear
+const age4 = calcAge4(1991);
+console.log(age4)
+
+const yearsUntilRetirement = birthYear => {
+    const age = 2021 - birthYear
+    const retirement = 65 - age
+    
+    return retirement
+}
+
+console.log(yearsUntilRetirement(1996))
+
+const yearsUntilRetirement2 = (birthYear, firstName) => {
+    const age = 2021 - birthYear
+    const retirement = 65 - age
+    
+    return `${firstName} retires in ${retirement}years.`
+}
+
+console.log(yearsUntilRetirement2(2001, 'Bob'))
+console.log(yearsUntilRetirement2(1999, 'Tohmas'))
