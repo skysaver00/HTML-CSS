@@ -208,3 +208,16 @@ console.log(checkWinner(calcAverage(44, 23, 71), calcAverage(65, 54, 49)))
 console.log(checkWinner(calcAverage(85, 54, 41), calcAverage(23,34,27)))
 
 ////Arrays
+const friend1 = 'Kim';
+const friend2 = 'Lee';
+const friend3 = 'Min';
+//이렇게 하면 개극혐이지 않을까? 언제 이러고 계속 해야하냐...
+const friends = ['Kim', 'Lee', 'Min']; //이러면 된다.
+//배열은 자바스크립트에도 있다.
+console.log(friend1, friend2, friend3, friends)
+//또는 이렇게 지정이 가능하다.
+const years = new Array(1964, 1965, 1996, 2001);
+console.log(years)
+
+console.log(friends[0]) //이렇게 하면 맨 처음에 들어있는 값이 출력된다.
+//당연히 0부터 시작한다.
