@@ -206,3 +206,5 @@ const checkWinner = function(avgDolphins, avgKoalas) {
 
 console.log(checkWinner(calcAverage(44, 23, 71), calcAverage(65, 54, 49)))
 console.log(checkWinner(calcAverage(85, 54, 41), calcAverage(23,34,27)))
+
+////Arrays
