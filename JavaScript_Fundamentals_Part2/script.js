@@ -221,3 +221,4 @@ console.log(years)
 
 console.log(friends[0]) //이렇게 하면 맨 처음에 들어있는 값이 출력된다.
 //당연히 0부터 시작한다.
+console.log(friends.length, years.length)
