@@ -221,4 +221,20 @@ console.log(years)
 
 console.log(friends[0]) //이렇게 하면 맨 처음에 들어있는 값이 출력된다.
 //당연히 0부터 시작한다.
-console.log(friends.length, years.length)
+console.log(friends.length, years.length) //배열의 총 크기 출력
+console.log(friends[friends.length - 1]) //이렇게 하면 마지막께 나옴 -1해주자.
+
+friends[1] = 'Hwang'
+console.log(friends)
+//friends = ['Bob', 'Alice'] 이렇게 할 수는 없다. 이미 지정된 const 배열이니까
+let kim = ['YoungWoo', 'Kim', 2021-1996]
+console.log(kim)
+
+kim = ['YoungWoo', 'Kim', 2021-1996, ['Seoul', 'Mokdong'], friends]
+//배열안에 배열을 넣는 것도 가능하다.
+
+const arrayPopulation = [51700000, 122330000, 249860000, 74930000]
+console.log(arrayPopulation.length == 4)
+const percentages = [percentageOfWorld1(arrayPopulation[0]), percentageOfWorld1(arrayPopulation[1]), percentageOfWorld1(arrayPopulation[2]), percentageOfWorld1(arrayPopulation[3])]
+console.log(percentages)
+
