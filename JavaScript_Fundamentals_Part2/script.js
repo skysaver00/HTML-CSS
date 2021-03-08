@@ -238,3 +238,18 @@ console.log(arrayPopulation.length == 4)
 const percentages = [percentageOfWorld1(arrayPopulation[0]), percentageOfWorld1(arrayPopulation[1]), percentageOfWorld1(arrayPopulation[2]), percentageOfWorld1(arrayPopulation[3])]
 console.log(percentages)
 
+////Basic Array Operations(Methods)
+//push메소드는 배열 맨 뒤에 element를 넣어준다.
+console.log(friends)
+friends.push('Choi')
+console.log(friends)
+
+const newLength = friends.push('Song')
+console.log(newLength)
+friends.unshift('Park')
+console.log(friends)
+//이렇게 하면 hwang이 제일 앞으로 붙게된다.
+friends.pop()
+friends.pop()
+//이러면 뒤에있는걸 각각 삭제한다.
+console.log(friends)
