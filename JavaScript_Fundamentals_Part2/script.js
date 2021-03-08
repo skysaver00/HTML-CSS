@@ -291,9 +291,19 @@ const calcTip = (value) => {
     if(value >= 50 && value <= 300) return value * 1.15
     else return value * 1.2
 }
+
+const calTip2 = function(value) {
+
+}
+
+function calTip3(value) {
+
+}
+//이렇게 3가지 방법이 있다.
+
 console.log(calcTip(200))
 const bills = [125, 555, 44]
 const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])]
 console.log(bills, tips)
-const total = bills + tips
+const total = [bills[0] +  tips[0], bills[1] +  tips[1], bills[2] +  tips[2]]
 console.log(total)
