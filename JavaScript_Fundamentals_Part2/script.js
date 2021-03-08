@@ -253,3 +253,47 @@ friends.pop()
 friends.pop()
 //이러면 뒤에있는걸 각각 삭제한다.
 console.log(friends)
+
+friends.shift()
+console.log(friends) //제일 앞에 있는걸 삭제한다.
+/* 따라서
+ * push -> 뒤에 추가, pop -> 뒤에 제거, shift -> 앞에 제거, unshift -> 앞에 추가
+ * 이를 마치 큐, 스택 하듯이 덱처럼 사용할 수 있다.
+ * */
+
+console.log(friends.indexOf('Hwang')) //이건 1을 반환하게 된다.
+console.log(friends.indexOf('Kim)')) //없으면 -1을 반환한다.
+
+console.log(friends.includes('Choi')) //element가 있으면 true, 없으면 false
+console.log(friends.includes('Kim'))
+//includes는 strict하니까 숫자랑 문자열을 구분한다.
+
+if(friends.includes('Kim')) {
+    console.log('You hava a friend called Kim')
+}
+
+const neighbours = ['Japan', 'China', 'North Korea']
+console.log(neighbours)
+neighbours.push('Utopia')
+console.log(neighbours)
+neighbours.pop()
+console.log(neighbours)
+
+if(!neighbours.includes('Germany')) {
+    console.log('Probably not a central European country :D')
+}
+
+neighbours[2] = "Democratic People's Republic of Korea"
+console.log(neighbours)
+
+////Coding Challange 2
+const calcTip = (value) => {
+    if(value >= 50 && value <= 300) return value * 1.15
+    else return value * 1.2
+}
+console.log(calcTip(200))
+const bills = [125, 555, 44]
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])]
+console.log(bills, tips)
+const total = bills + tips
+console.log(total)
