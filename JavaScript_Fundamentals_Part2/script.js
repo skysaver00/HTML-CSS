@@ -319,6 +319,15 @@ const kimObject = {
 console.log(kimObject)
 console.log(kimObject.job) //이렇게 가지고 온다.
 
+const myCountry = {
+    country: 'Republic of Korea',
+    language: 'Korean',
+    population: 51700000,
+    capital: 'Seoul',
+    neighbours: ['Japan', 'China', 'Taiwan']
+}
+console.log(myCountry)
+
 ////Dot VS Bracket Notation
 console.log(kimObject.age);
 console.log(kimObject['age']) //Dot, Bracket는 이렇게 선언한다.
@@ -332,3 +341,13 @@ console.log(kimObject['first' + nameKey, 'last' + nameKey])
 const pmpt = prompt('what do you want to know?')
 console.log(kimObject[pmpt])
 //이거는 scanf와 같은거. alert처럼 입력하라는게 뜨게 된다.
+
+kimObject.location = 'Seoul'
+kimObject['phoneNumber'] = 1234567890
+
+console.log(kimObject)
+
+console.log(kimObject.firstName + " has " + kimObject.friends.length + " friends, and his best friend is " + kimObject.friends[1])
+console.log(kimObject.firstName + " has " + kimObject['friends'].length + " friends, and his best friend is " + kimObject['friends'][1])
+
+console.log(myCountry.country + " has " + myCountry['population'] + " " + myCountry.language + "-speaking people, " + myCountry['neighbours'].length + " neighbouring countries and capital called " + myCountry.capital)
