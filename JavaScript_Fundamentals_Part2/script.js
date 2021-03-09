@@ -317,5 +317,18 @@ const kimObject = {
     friends: ['kim', 'lee', 'park']
 } //[]말고 {}를 사용한다.
 console.log(kimObject)
-console.log(kimObject.job)
+console.log(kimObject.job) //이렇게 가지고 온다.
+
 ////Dot VS Bracket Notation
+console.log(kimObject.age);
+console.log(kimObject['age']) //Dot, Bracket는 이렇게 선언한다.
+//원하는거 하난 그냥 잡아서 사용해주자. 나는 Dot이용할 생각.
+
+const nameKey = 'Name';
+console.log(kimObject['first' + nameKey, 'last' + nameKey])
+//이렇게 쓰는 것도 가능하다.
+
+//이렇게는 불가능 하다. console.log(kimObject.('first' + nameKey))
+const pmpt = prompt('what do you want to know?')
+console.log(kimObject[pmpt])
+//이거는 scanf와 같은거. alert처럼 입력하라는게 뜨게 된다.
