@@ -307,3 +307,15 @@ const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])]
 console.log(bills, tips)
 const total = [bills[0] +  tips[0], bills[1] +  tips[1], bills[2] +  tips[2]]
 console.log(total)
+
+////Objects
+const kimObject = {
+    firstName: 'youngwoo',
+    lastName: 'kim',
+    age: 2021-1996,
+    job: 'student',
+    friends: ['kim', 'lee', 'park']
+} //[]말고 {}를 사용한다.
+console.log(kimObject)
+console.log(kimObject.job)
+////Dot VS Bracket Notation
