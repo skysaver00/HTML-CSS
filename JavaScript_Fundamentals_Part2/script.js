@@ -447,3 +447,22 @@ for(let i = 1; i < 6 ** 6; i *= 6) {
 for(let i = 1; i <= 50; i++) {
     console.log(`Voter number ${i} is currently voting`)
 }
+
+////Looping Arrays, Breaking and Continuing
+const Array1 = [
+    'Apple',
+    'Banana',
+    'Orange',
+    'Grape',
+    ['Strawberry', 'Raspberry', 'Blueberry', 'Asahiberry', 'Crayberry', 'Lingonberry'],
+    'Peach',
+    'Pineapple',
+    'Kiwi',
+    'Mango',
+    'Watermelon',
+    'Cherry',
+]
+
+for(let i = 0; i < Array1.length; i++) {
+    console.log(Array1[i])
+}
