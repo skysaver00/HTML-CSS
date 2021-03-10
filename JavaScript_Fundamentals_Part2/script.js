@@ -309,7 +309,7 @@ const total = [bills[0] +  tips[0], bills[1] +  tips[1], bills[2] +  tips[2]]
 console.log(total)
 
 ////Objects
-const kimObject = {
+let kimObject = {
     firstName: 'youngwoo',
     lastName: 'kim',
     age: 2021-1996,
@@ -319,7 +319,7 @@ const kimObject = {
 console.log(kimObject)
 console.log(kimObject.job) //이렇게 가지고 온다.
 
-const myCountry = {
+let myCountry = {
     country: 'Republic of Korea',
     language: 'Korean',
     population: 51700000,
@@ -338,8 +338,8 @@ console.log(kimObject['first' + nameKey, 'last' + nameKey])
 //이렇게 쓰는 것도 가능하다.
 
 //이렇게는 불가능 하다. console.log(kimObject.('first' + nameKey))
-const pmpt = prompt('what do you want to know?')
-console.log(kimObject[pmpt])
+/* const pmpt = prompt('what do you want to know?')
+console.log(kimObject[pmpt]) */
 //이거는 scanf와 같은거. alert처럼 입력하라는게 뜨게 된다.
 
 kimObject.location = 'Seoul'
@@ -351,3 +351,71 @@ console.log(kimObject.firstName + " has " + kimObject.friends.length + " friends
 console.log(kimObject.firstName + " has " + kimObject['friends'].length + " friends, and his best friend is " + kimObject['friends'][1])
 
 console.log(myCountry.country + " has " + myCountry['population'] + " " + myCountry.language + "-speaking people, " + myCountry['neighbours'].length + " neighbouring countries and capital called " + myCountry.capital)
+console.log(`${myCountry['country']} has ${myCountry.population} ${myCountry['language']}-speaking people, ${myCountry.neighbours.length} neighbouring countries and capital called ${myCountry['capital']}`)
+
+////Objects Methods
+
+kimObject = {
+    firstName: 'youngwoo',
+    lastName: 'kim',
+    age: 2021-1996,
+    job: 'student',
+    friends: ['kim', 'lee', 'park'],
+
+    calcAgeObject: function(birthYear) {
+        return 2021 - birthYear;
+    },
+
+    multipleFive: num =>
+    {
+        return num * 5
+    },
+
+    shout: (speak, louder) => {
+        console.log(speak)
+        return louder
+    },
+
+    multipleAge: function(num) {
+        return this.age * num //this를 쓰는 이유는 나중에 kimObject가 다른 이름
+        //으로 변경되어도 용이하게 쓸 수있게 해주기 때문.
+    },
+
+    getSummary: function() {
+        return `${this.firstName} is a ${this.calcAgeObject(1996)}-year old ${this.job}`
+    }
+}
+
+console.log(kimObject.calcAgeObject(1996))
+console.log(kimObject.multipleFive(20))
+console.log(kimObject['shout']('HIIIIIIIIIIIII', 'LLLOUDERRRRRRRRRR!'))
+console.log(kimObject.multipleAge(40))
+console.log(kimObject.calcAgeObject(1996))
+console.log(kimObject.getSummary())
+
+////Coding Challanges 3
+const person1 = {
+    fullName = 'Mark Miller',
+    mass = 78,
+    height = 1.69,
+    calcBMI: function() {
+        BMI = this.mass / (this.height ** 2)
+        return BMI
+    }
+}
+
+const person2 = {
+    fullName = 'John Smith',
+    mass = 92,
+    height = 1.95,
+    calcBMI: function() {
+        BMI = this.mass / (this.height ** 2)
+        return BMI
+    }
+}
+
+if(person1.calcBMI > person2.calcBMI) {
+    console.log(`${person1.fullName} (${person1.BMI}) is higher than ${person2.fullName}! (${person2.BMI})`)
+} else {
+    console.log(`${person2.fullName} (${person2.BMI}) is higher than ${person1.fullName}! (${person1.BMI})`)
+}
