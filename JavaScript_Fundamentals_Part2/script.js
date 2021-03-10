@@ -522,3 +522,68 @@ for(let i = listOfNeighbours.length - 1; i >= 0; i--) {
         console.log(`Neighbour: ${listOfNeighbours[i][j]}`)
     }
 }
+
+////While Loop
+let rep = Array1.length
+while(rep--) {
+    console.log(Array1[rep])
+}
+
+rep = 1;
+while(rep <= 10) {
+    console.log(`While: Lifting weights repetiton ${rep} 😀`)
+    rep++
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1
+while(dice != 6) {
+    console.log(`You rolled a ${dice}`)
+    dice = Math.trunc(Math.random() * 6) + 1
+} //랜덤을 정하는 숫자다.
+
+////Coding Challange 4
+const bills2 = [
+    22,
+    295,
+    176,
+    440,
+    37,
+    105,
+    10,
+    1100,
+    86,
+    52
+]
+
+const tip = []
+const totals = []
+
+const calcTip2 = (value) => {
+    if(value >= 50 && value <= 300) {
+        tip.push(value * 0.15)
+        totals.push(value * 1.15)
+    }
+    else {
+        tip.push(value * 0.2)
+        totals.push(value * 1.2)
+    }
+}
+
+for(let i = 0; i < bills2.length; i++) {
+    calcTip2(bills2[i])
+}
+
+console.log(tip)
+console.log(totals)
+
+const calcAverage2 = (arr = []) => {
+    let sum = 0
+    let t = arr.length
+    while(t--) {
+        sum += arr[t]
+    }
+    sum /= arr.length
+    return sum
+}
+
+console.log(`the average of total is ${calcAverage2(totals)}`)
