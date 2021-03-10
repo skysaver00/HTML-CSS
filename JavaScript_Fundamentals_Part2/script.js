@@ -499,3 +499,26 @@ for(let i = 0; i < Array2.length; i++) {
     if(i === 7) break;
     else console.log(Array1[i])
 } //이렇게 되면 7개까지만 출력 완료
+
+////Looping Backwards and Loops in Loops
+for(let i = Array1.length; i >= 0; i--) {
+    console.log(Array1[i])
+} //이렇게 하면 거꾸로 출력이 된다.
+
+const listOfNeighbours = [
+    ['Canada', 'Mexico'],
+    ['Spain'],
+    ['Norway', 'Sweden', 'Russia']
+]
+
+for(let i = 0; i < listOfNeighbours.length; i++) {
+    for(let j = 0; j < listOfNeighbours[i].length; j++) {
+        console.log(`Neighbour: ${listOfNeighbours[i][j]}`)
+    }
+}
+
+for(let i = listOfNeighbours.length - 1; i >= 0; i--) {
+    for(let j = listOfNeighbours[i].length - 1; j >= 0 ; j--) {
+        console.log(`Neighbour: ${listOfNeighbours[i][j]}`)
+    }
+}
