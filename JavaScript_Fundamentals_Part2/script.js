@@ -461,8 +461,41 @@ const Array1 = [
     'Mango',
     'Watermelon',
     'Cherry',
-]
+] //이렇게 배열을 선언할 수 있다.
 
 for(let i = 0; i < Array1.length; i++) {
     console.log(Array1[i])
 }
+
+const percentages2 = []
+for(let i = 0; i < arrayPopulation.length; i++) {
+    const percent = percentageOfWorld1(arrayPopulation[i])
+    percentages2.push(percent)
+}
+console.log(percentages2)
+percentages2.pop()
+console.log(percentages2)
+percentages2.shift()
+console.log(percentages2)
+
+const Array2 = [
+    'Hello',
+    23,
+    456,
+    'Hi',
+    10.304,
+    'Yes',
+    'No',
+    ['1', '2'], //이건 출력되지 않는다.
+    '100'
+]
+
+for(let i = 0 ; i < Array2.length; i++) {
+    if(typeof Array2[i] != 'string') continue
+    else console.log(Array2[i])
+}
+
+for(let i = 0; i < Array2.length; i++) {
+    if(i === 7) break;
+    else console.log(Array1[i])
+} //이렇게 되면 7개까지만 출력 완료
