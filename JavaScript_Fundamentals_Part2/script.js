@@ -395,27 +395,55 @@ console.log(kimObject.getSummary())
 
 ////Coding Challanges 3
 const person1 = {
-    fullName = 'Mark Miller',
-    mass = 78,
-    height = 1.69,
+    fullName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
     calcBMI: function() {
-        BMI = this.mass / (this.height ** 2)
-        return BMI
+        this.BMI = this.mass / (this.height ** 2)
+        return this.BMI
     }
 }
 
 const person2 = {
-    fullName = 'John Smith',
-    mass = 92,
-    height = 1.95,
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
     calcBMI: function() {
-        BMI = this.mass / (this.height ** 2)
-        return BMI
+        this.BMI= this.mass / (this.height ** 2)
+        return this.BMI
     }
 }
 
-if(person1.calcBMI > person2.calcBMI) {
+if(person1.calcBMI() > person2.calcBMI()) {
     console.log(`${person1.fullName} (${person1.BMI}) is higher than ${person2.fullName}! (${person2.BMI})`)
 } else {
     console.log(`${person2.fullName} (${person2.BMI}) is higher than ${person1.fullName}! (${person1.BMI})`)
+}
+
+////For Loop
+console.log(`repeat 1`)
+console.log(`repeat 2`)
+console.log(`repeat 3`)
+console.log(`repeat 4`)
+console.log(`repeat 5`)
+console.log(`repeat 6`)
+console.log(`repeat 7`)
+console.log(`repeat 8`)
+console.log(`repeat 9`)
+console.log(`repeat 10 이렇게 하지 말자.`) //매우 뻘짓거리
+
+for(let i = 1; i <= 10; i++) {
+    console.log(`repeat ${i}`)
+} //이게 for 반복문이다.
+
+for(let i = 5; i > 0; i--) {
+    console.log(`${i}번 반복!`)
+} //거꾸로 할 수도 있다.
+
+for(let i = 1; i < 6 ** 6; i *= 6) {
+    console.log(`${i}는 제곱한다.`)
+} //이렇게 ++, --뿐만 아니라 다양한 수를 곱하는 것도 가능하다.
+
+for(let i = 1; i <= 50; i++) {
+    console.log(`Voter number ${i} is currently voting`)
 }
