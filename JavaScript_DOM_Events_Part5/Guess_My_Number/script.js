@@ -51,38 +51,53 @@ console.log(document.querySelector('.guess').value) //이렇게 하면 일단
 ////Handling Click Events, Implementing Game Logic
 //ㄹㅇ 무언가 클릭하면 상호작용하는 것 -> event listener
 //Event가 일어나야하는 곳을 확인하고 지정해야 한다.
-const number = Math.trunc(Math.random() * 20) + 1;
+let number = Math.trunc(Math.random() * 100) + 1;
 //숨겨진 번호는 이렇게 정한다.
 let score = 20
+console.log(number)
 //얘는 점수다.
-document.querySelector('.number').textContent = number
 
 document.querySelector('.check').addEventListener('click', function() {
     const guess = Number(document.querySelector('.guess').value)
-    document.querySelector('.number').textContent = guess
 
-    if(!guess) {
+    ////DOM CSS Manipulation
+    //Dom은 CSS스타일도 수정할 수 있다. DOM을 통해 조작이 가능하다.
+    //역시 queryselector로 요소를 정하고, 요소에 맞는 클릭 등이 들어오면
+    //document.queryselector('body').style.background로 body의 요소의 style을 고쳐준다.
+
+    if(!guess) {//입력이 없으면
         document.querySelector('.message').textContent = '😡 No Number!'
-    } else if(guess === number) {
+
+    } else if(guess === number) {//입력이 정답과 같으면
         document.querySelector('.message').textContent = '🎉 Correct Number!'
         document.querySelector('.highscore').textContent = score
-    } else if(guess > number) {
+        document.querySelector('.number').textContent = number
+        document.querySelector('body').style.backgroundColor = '#3BB143'
+        document.querySelector('.number').style.width = '30rem'
+
+    } else if(guess > number) {//입력이 정답보다 크면
         if(score > 1) {
             document.querySelector('.message').textContent = '🤨 Too high!'
             score--
             document.querySelector('.score').textContent = score 
+
             } else {
                 document.querySelector('.message').textContent = '😈 You lost the game!'
                 document.querySelector('.score').textContent = 0
+                document.querySelector('body').style.backgroundColor = '#BF0A30'
+
             }
-    } else if(guess < number) {
+    } else if(guess < number) {//입력이 정답보다 작으면
         if(score > 1) {
-            document.querySelector('.message').textContent = '🤨 Too high!'
+            document.querySelector('.message').textContent = '🤨 Too low!'
             score--
-            document.querySelector('.score').textContent = score 
+            document.querySelector('.score').textContent = score
+
             } else {
                 document.querySelector('.message').textContent = '😈 You lost the game!'
                 document.querySelector('.score').textContent = 0
+                document.querySelector('body').style.backgroundColor = '#BF0A30'
+
             }
     }
     //매직 넘버를 만들어주는 것은 바깥에서 해야한다.
@@ -94,3 +109,16 @@ document.querySelector('.check').addEventListener('click', function() {
 
 //이렇게 하면 .check이라는 버튼을 클릭하게 되면,
 //.guess에 있는 값이 console창에 보여지게 된다.
+
+////Coding Challange 1
+document.querySelector('.again').addEventListener('click', function() {
+    score = 20;
+    number = Math.trunc(Math.random * 100 + 1)
+    document.querySelector('.guess').value = ''
+    document.querySelector('.score').textContent = score
+    document.querySelector('.message').textContent = 'Start guessing...'
+    document.querySelector('.number').textContent = '?'
+
+    document.querySelector('body').style.backgroundColor = '#333333'
+    document.querySelector('.number').stlye.width = '15rem'
+})
