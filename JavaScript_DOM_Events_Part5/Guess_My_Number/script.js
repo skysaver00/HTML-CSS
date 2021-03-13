@@ -30,7 +30,7 @@ console.log(document.querySelector('.message').textContent)
 
 ////Selecting and Manipulating Documents
 //Element를 get뿐만 아니라, Set도 가능하다.
-document.querySelector('.message').textContent = 'Correct number!'
+//document.querySelector('.message').textContent = 'Correct number!'
 //안먹히는 이유는 바꾸긴 하는데, 어떤 기준으로 바꾸는지는 모르기 때문이다.
 
 //class = guess에 숫자가 담겨있기 때문에 여기를 querySelector로 가져온다.
@@ -48,16 +48,30 @@ console.log(document.querySelector('.guess').value) //이렇게 하면 일단
 
 //그럼 클릭을 해서 콘솔창에서 클릭을 하게 해보려면 어떻게 해야할까?
 
-////Handling Click Events
+////Handling Click Events, Implementing Game Logic
 //ㄹㅇ 무언가 클릭하면 상호작용하는 것 -> event listener
 //Event가 일어나야하는 곳을 확인하고 지정해야 한다.
-const x = (a) => {
-
-}
+const number = Math.trunc(Math.random() * 20) + 1;
+//숨겨진 번호는 이렇게 정한다.
+document.querySelector('.number').textContent = number
 
 document.querySelector('.check').addEventListener('click', function() {
-    const guess = document.querySelector('.guess').value
+    const guess = Number(document.querySelector('.guess').value)
     document.querySelector('.number').textContent = guess
+
+    if(!guess) {
+        document.querySelector('.message').textContent = '😡 No Number!'
+    } else if(guess === number) {
+        document.querySelector('.message').textContent = '🎉 Correct Number!'
+    } else if(guess > number) {
+        document.querySelector('.message').textContent = '🤨 Too high!'
+    } else if(guess < number) {
+        document.querySelector('.message').textContent = '🤨 Too low!'
+    }
+
+
+    //매직 넘버를 만들어주는 것은 바깥에서 해야한다.
+    //오직 한번만 지정해줘야하기 때문이다.
 })
 //이걸 누르면 상호작용이 이뤄져야 한다. 클릭하면 event가 실행
 //따라서 상호작용이 일어나야 하는 것을 고르자.
