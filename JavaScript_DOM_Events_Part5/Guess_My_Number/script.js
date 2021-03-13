@@ -54,8 +54,13 @@ console.log(document.querySelector('.guess').value) //이렇게 하면 일단
 let number = Math.trunc(Math.random() * 100) + 1;
 //숨겨진 번호는 이렇게 정한다.
 let score = 20
+let highscore = 0
 console.log(number)
 //얘는 점수다.
+
+const displayMessage = (message) => {
+    document.querySelector('.message').textContent = message;
+}
 
 document.querySelector('.check').addEventListener('click', function() {
     const guess = Number(document.querySelector('.guess').value)
@@ -66,16 +71,32 @@ document.querySelector('.check').addEventListener('click', function() {
     //document.queryselector('body').style.background로 body의 요소의 style을 고쳐준다.
 
     if(!guess) {//입력이 없으면
-        document.querySelector('.message').textContent = '😡 No Number!'
+        displayMessage('😡 No Number!') //이렇게 하면 .message textcontent를 통일 시킬 수 있다.
+        //document.querySelector('.message').textContent = '😡 No Number!'
+        //이렇게 하면 코드가 훨씬더 나아지지만, 드라이하다는게 단점이 된다.
 
     } else if(guess === number) {//입력이 정답과 같으면
-        document.querySelector('.message').textContent = '🎉 Correct Number!'
-        document.querySelector('.highscore').textContent = score
+        displayMessage('🎉 Correct Number!')
         document.querySelector('.number').textContent = number
         document.querySelector('body').style.backgroundColor = '#3BB143'
         document.querySelector('.number').style.width = '30rem'
 
-    } else if(guess > number) {//입력이 정답보다 크면
+        if(score > highscore) {
+            highscore = score
+            document.querySelector('.highscore').textContent = highscore
+        }
+
+    } else {
+        if(score > 1) {
+            displayMessage(guess > number ? '🤨 Too high!' : '🤨 Too low!')
+            score--
+            document.querySelector('.score').textContent = score 
+        } else {
+            displayMessage('😈 You lost the game!')
+            document.querySelector('.score').textContent = 0
+            document.querySelector('body').style.backgroundColor = '#BF0A30'
+        }
+    } /*else if(guess > number) {//입력이 정답보다 크면
         if(score > 1) {
             document.querySelector('.message').textContent = '🤨 Too high!'
             score--
@@ -83,6 +104,11 @@ document.querySelector('.check').addEventListener('click', function() {
 
             } else {
                 document.querySelector('.message').textContent = '😈 You lost the game!'
+                ////Refactoring
+                //위의 저 you lost the game을 더 최적화 할 수 없을까?
+                //만약에 you lost the game대신에 loser!라고 하고 싶다면,
+                //2번에 걸쳐서 바꿔야 하는데 번거롭다. 다른 방법은?
+                //이를 빼면 된다.
                 document.querySelector('.score').textContent = 0
                 document.querySelector('body').style.backgroundColor = '#BF0A30'
 
@@ -99,9 +125,10 @@ document.querySelector('.check').addEventListener('click', function() {
                 document.querySelector('body').style.backgroundColor = '#BF0A30'
 
             }
-    }
+    }*/
     //매직 넘버를 만들어주는 것은 바깥에서 해야한다.
     //오직 한번만 지정해줘야하기 때문이다.
+    console.log(number)
 })
 //이걸 누르면 상호작용이 이뤄져야 한다. 클릭하면 event가 실행
 //따라서 상호작용이 일어나야 하는 것을 고르자.
@@ -114,7 +141,7 @@ document.querySelector('.check').addEventListener('click', function() {
 
 document.querySelector('.again').addEventListener('click', function() {
     score = 20
-    number = Math.trunc(Math.random() * 100 + 1)
+    number = Math.trunc(Math.random() * 100) + 1
     document.querySelector('.number').textContent = '?'
     document.querySelector('.message').textContent = 'Start guessing...'
     document.querySelector('.score').textContent = score
