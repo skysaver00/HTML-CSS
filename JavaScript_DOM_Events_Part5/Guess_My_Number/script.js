@@ -111,14 +111,15 @@ document.querySelector('.check').addEventListener('click', function() {
 //.guess에 있는 값이 console창에 보여지게 된다.
 
 ////Coding Challange 1
+
 document.querySelector('.again').addEventListener('click', function() {
-    score = 20;
-    number = Math.trunc(Math.random * 100 + 1)
-    document.querySelector('.guess').value = ''
-    document.querySelector('.score').textContent = score
-    document.querySelector('.message').textContent = 'Start guessing...'
+    score = 20
+    number = Math.trunc(Math.random() * 100 + 1)
     document.querySelector('.number').textContent = '?'
+    document.querySelector('.message').textContent = 'Start guessing...'
+    document.querySelector('.score').textContent = score
+    document.querySelector('.guess').value = ''
 
     document.querySelector('body').style.backgroundColor = '#333333'
-    document.querySelector('.number').stlye.width = '15rem'
+    document.querySelector('.number').style.width = '15rem'
 })
