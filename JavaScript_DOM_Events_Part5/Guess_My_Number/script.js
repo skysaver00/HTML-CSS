@@ -53,6 +53,8 @@ console.log(document.querySelector('.guess').value) //이렇게 하면 일단
 //Event가 일어나야하는 곳을 확인하고 지정해야 한다.
 const number = Math.trunc(Math.random() * 20) + 1;
 //숨겨진 번호는 이렇게 정한다.
+let score = 20
+//얘는 점수다.
 document.querySelector('.number').textContent = number
 
 document.querySelector('.check').addEventListener('click', function() {
@@ -63,13 +65,26 @@ document.querySelector('.check').addEventListener('click', function() {
         document.querySelector('.message').textContent = '😡 No Number!'
     } else if(guess === number) {
         document.querySelector('.message').textContent = '🎉 Correct Number!'
+        document.querySelector('.highscore').textContent = score
     } else if(guess > number) {
-        document.querySelector('.message').textContent = '🤨 Too high!'
+        if(score > 1) {
+            document.querySelector('.message').textContent = '🤨 Too high!'
+            score--
+            document.querySelector('.score').textContent = score 
+            } else {
+                document.querySelector('.message').textContent = '😈 You lost the game!'
+                document.querySelector('.score').textContent = 0
+            }
     } else if(guess < number) {
-        document.querySelector('.message').textContent = '🤨 Too low!'
+        if(score > 1) {
+            document.querySelector('.message').textContent = '🤨 Too high!'
+            score--
+            document.querySelector('.score').textContent = score 
+            } else {
+                document.querySelector('.message').textContent = '😈 You lost the game!'
+                document.querySelector('.score').textContent = 0
+            }
     }
-
-
     //매직 넘버를 만들어주는 것은 바깥에서 해야한다.
     //오직 한번만 지정해줘야하기 때문이다.
 })
