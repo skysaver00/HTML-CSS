@@ -36,4 +36,24 @@ for(let i = 0; i < btnsOpenModal.length; i++) {
  * 4.자유롭게 하고 싶으면 function을 따로 선언해 주어도 된다.
  */
 
+//keypress이벤트는 어떻게 할까?
+//ESC키로 탈출하는 방법?
+//keypress -> 누를때 계속 신호가 가게됨
+//keydown -> 누를때만 신호가 간다.
+//keyup -> 누르고 떼는 순간 신호 간다.
+
+document.addEventListener('keydown', function(e) {
+    console.log('A key was pressed')
+    console.log(e.key) //이를통해 어떤 키가 눌렸는지 알 수 있다.
+
+    /*if(e.key === 'Escape') {//여기서 modal을 다시 숨길 수 있다.
+        if(!modal.classList.contains('hidden')) { //hidden이 아니여야 추가.
+            closeModal()
+        }
+    }*/ //사실 이것보다.
+    if(e.key === 'Escape' && (!modal.classList.contains('hidden'))) closeModal()
+    //한큐에 끝낼 수 있다!
+})//어떤 키가 눌렸는지 알고싶을때는? -> 이미 누르는 순간 Object생성
+//그것을 통해 알 수 있다.
+
 //역시 클릭 이벤트를 만들려면, addEventListener를 만들어 줘야한다.

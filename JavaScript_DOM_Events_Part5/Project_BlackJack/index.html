@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>블랙잭</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="center">Black Jack!</h1>
+    <h2 class="center">블랙잭</h2>
+
+    <button type="button" class="show-modal">?</button>
+
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1>블랙잭 하는 방법 🃏</h1>
+      <div class="bold">
+        <p>
+          숫자의 합이 21점 또는 21점에 가장 가깝게 만들면 승리하며, 21을
+          초과하면 패배한다.
+        </p>
+        <p>
+          숫자카드인 2~10은 그 숫자대로 점수를 세고, K·Q·J는 10점으로 계산한다.
+        </p>
+        <p>에이스(A)는 1점 또는 11점 둘 중의 하나로 계산한다.</p>
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
