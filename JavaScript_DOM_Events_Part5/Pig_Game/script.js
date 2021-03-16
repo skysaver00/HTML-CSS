@@ -22,9 +22,11 @@ const btnNew = document.querySelector('.btn--new')
 const btnRoll = document.querySelector('.btn--roll')
 const btnHold = document.querySelector('.btn--hold')
 
-let currentScore = 0; //계속 업데이트 하니
+let currentScore = 0; //계속 업데이트 하게 된다.
 const current0 = document.getElementById('current--0')
 const current1 = document.getElementById('current--1')
+const scores = [0, 0] //이게 final score가 된다.
+let activePlayer = Math.trunc(Math.random() * 2) + 1
 
 btnNew.addEventListener('click', function() {
 
@@ -34,8 +36,7 @@ btnRoll.addEventListener('click', function() {
     //클릭하면 주사위를 굴린다.
     //만약에 1이 나오면 상대에게 턴을 넘긴다.
     //이외의 숫자는 current에 표시한다.
-    const dice = Math.trunc(Math.random() * 6)
-    console.log(dice)
+    const dice = Math.trunc(Math.random() * 6) + 1
     //이제 diceEl을 display해야 한다.
     diceEl.classList.remove('hidden')
     //그리고 src를 바꿔치기 하면 된다. 지금은 dice-5인데 `dice-${}`이렇게 해서 고쳐줄 수 있다.
@@ -45,7 +46,10 @@ btnRoll.addEventListener('click', function() {
     if(dice != 1) {
         //이러면 주사위를 current에 표시해줘야한다.
         currentScore += dice;
-        score0El.textContent = currentScore
+        document.getElementById(`current--${activePlayer}`).textContent = currentScore
+    } else {
+        if(activePlayer === 0) activePlayer += 1
+        else activePlayer -= 1
     }
 })
 
