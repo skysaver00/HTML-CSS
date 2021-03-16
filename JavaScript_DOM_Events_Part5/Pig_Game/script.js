@@ -22,6 +22,10 @@ const btnNew = document.querySelector('.btn--new')
 const btnRoll = document.querySelector('.btn--roll')
 const btnHold = document.querySelector('.btn--hold')
 
+let currentScore = 0; //계속 업데이트 하니
+const current0 = document.getElementById('current--0')
+const current1 = document.getElementById('current--1')
+
 btnNew.addEventListener('click', function() {
 
 })
@@ -34,6 +38,15 @@ btnRoll.addEventListener('click', function() {
     console.log(dice)
     //이제 diceEl을 display해야 한다.
     diceEl.classList.remove('hidden')
+    //그리고 src를 바꿔치기 하면 된다. 지금은 dice-5인데 `dice-${}`이렇게 해서 고쳐줄 수 있다.
+    diceEl.src = `dice-${dice}.png`
+
+    //이제 1이 나왔으면 플레이어를 바꿔야 한다.
+    if(dice != 1) {
+        //이러면 주사위를 current에 표시해줘야한다.
+        currentScore += dice;
+        score0El.textContent = currentScore
+    }
 })
 
 btnHold.addEventListener('click', function() {
