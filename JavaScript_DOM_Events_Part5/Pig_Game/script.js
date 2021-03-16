@@ -26,7 +26,18 @@ let currentScore = 0; //계속 업데이트 하게 된다.
 const current0 = document.getElementById('current--0')
 const current1 = document.getElementById('current--1')
 const scores = [0, 0] //이게 final score가 된다.
-let activePlayer = Math.trunc(Math.random() * 2) + 1
+let activePlayer = Math.trunc(Math.random() * 2)
+console.log(activePlayer)
+const player0El = document.querySelector('.player--0')
+const player1El = document.querySelector('.player--1')
+
+if(activePlayer === 0) {
+    player0El.classList.add(`player--active`)
+    player1El.classList.remove(`player--active`)
+} else {
+    player1El.classList.add(`player--active`)
+    player0El.classList.remove(`player--active`)
+}
 
 btnNew.addEventListener('click', function() {
 
@@ -48,8 +59,12 @@ btnRoll.addEventListener('click', function() {
         currentScore += dice;
         document.getElementById(`current--${activePlayer}`).textContent = currentScore
     } else {
+        document.getElementById(`current--${activePlayer}`).textContent = 0
         if(activePlayer === 0) activePlayer += 1
         else activePlayer -= 1
+        player0El.classList.toggle(`player--active`)
+        player1El.classList.toggle(`player--active`)
+        currentScore = 0
     }
 })
 
