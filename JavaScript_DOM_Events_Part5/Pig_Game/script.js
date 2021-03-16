@@ -18,3 +18,24 @@ score0El.textContent = 0
 score1El.textContent = 0
 diceEl.classList.add('hidden')
 
+const btnNew = document.querySelector('.btn--new')
+const btnRoll = document.querySelector('.btn--roll')
+const btnHold = document.querySelector('.btn--hold')
+
+btnNew.addEventListener('click', function() {
+
+})
+
+btnRoll.addEventListener('click', function() {
+    //클릭하면 주사위를 굴린다.
+    //만약에 1이 나오면 상대에게 턴을 넘긴다.
+    //이외의 숫자는 current에 표시한다.
+    const dice = Math.trunc(Math.random() * 6)
+    console.log(dice)
+    //이제 diceEl을 display해야 한다.
+    diceEl.classList.remove('hidden')
+})
+
+btnHold.addEventListener('click', function() {
+
+})
